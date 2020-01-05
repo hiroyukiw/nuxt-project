@@ -7,7 +7,12 @@ main
           | My Portforio
         h2.subtitle.is-size-4
           | Hiroyuki's Applications File
+        p.github-link
+          a(href="https://github.com/hiroyukiw/nuxt-project" target="_blank") 
+            font-awesome-icon(:icon="['fab', 'github']")
+            span GitHub
   list
+
 </template>
 
 <script>
@@ -23,5 +28,9 @@ export default {
 }
 </script>
 <style lang="stylus">
-  
+  .github-link
+    a
+      color white
+      span
+        margin-left 4px
 </style>

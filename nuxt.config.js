@@ -30,6 +30,7 @@ export default {
   */
   plugins: [
   ],
+  
   /*
   ** Nuxt.js dev-modules
   */
@@ -41,7 +42,21 @@ export default {
   modules: [
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
+    'nuxt-fontawesome'
   ],
+  fontawesome: {
+    imports: [
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      },
+      {
+        set: '@fortawesome/free-brands-svg-icons',
+        icons: ['fab']
+      }
+
+    ]
+  },
   /*
   ** Build configuration
   */

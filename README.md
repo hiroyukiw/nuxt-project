@@ -9,6 +9,9 @@
 Design Template
 - bulma 1.2.1
 
+Icon
+- Fontawesome
+
 Template Engine
 - pug 2.0.4
 
