@@ -1,5 +1,23 @@
 # my_vue_app
 
+## 開発環境
+- node v12.14.0
+- npm 6.13.4
+- vue.js vue@2.6.11 
+- nuxt.js 2.0.0
+
+Design Template
+- bulma 1.2.1
+
+Template Engine
+- pug 2.0.4
+
+CSS Preprocessor
+- Stylus + Sass
+
+Cloud Server
+- Firebase
+
 > My neat Nuxt.js project
 
 ## Build Setup
