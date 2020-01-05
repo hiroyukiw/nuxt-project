@@ -2,7 +2,7 @@
 section.section.section-list
   .container
     .columns.is-desktop.is-multiline
-      .column.is-one-quarter(v-for='item in postlist')
+      .column.is-one-third(v-for='item in postlist')
         .box
           article.media
             .media-left
@@ -12,7 +12,7 @@ section.section.section-list
               .content
                 h2 {{ item.title }}
                 p {{ item.guide }}
-                nuxt-link(to='/todo' class='button is-primary') Click
+                nuxt-link(:to="item.link", class="button is-primary") Click
 </template>
 
 <script>
@@ -22,10 +22,26 @@ export default {
       postlist: [
         {
           image: require('~/assets/images/todolist.png'),
-          alt: 'Image',
+          alt: 'List',
           title: 'ToDo List',
-          guide: 'Todoリストアプリ'
+          guide: 'Todoリストアプリ',
+          link: '/todo'
+        },
+        {
+          image: require('~/assets/images/bitcoin.png'),
+          alt: 'Bitcoin',
+          title: 'BitCoin Price',
+          guide: 'BitCoinの価格表示アプリ',
+          link: '/bitcoin'
+        },
+        {
+          image: require('~/assets/images/wprest.png'),
+          alt: 'WP-REST API',
+          title: 'WP-REST API',
+          guide: 'wordpressからAPIを取得して表示',
+          link: '/wpapi'
         }
+
       ]
     }
   }
