@@ -3,7 +3,8 @@
   .container
     nav.navbar.is-white(role='navigation', aria-label='main navigation')
       .navbar-brand
-        .navbar-item.logo Hiroyuki Portforio
+        .navbar-item.logo 
+          logo
         .navbar-burger(data-target='navMenu', @click="$store.commit('toggleMenu')", :class="{'is-active': $store.state.isMenuActive}")
           span
           span
@@ -16,7 +17,12 @@
 </template>
 
 <script>
+import Logo from '~/components/Logo.vue'
+
 export default {
+  components: {
+    Logo
+  },
   data: () => {
     return {isMenuActive: false}
   },
