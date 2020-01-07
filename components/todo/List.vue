@@ -40,6 +40,13 @@ export default {
           title: 'WP-REST API',
           guide: 'wordpressからAPIを取得して表示',
           link: '/wpapi'
+        },
+        {
+          image: require('~/assets/images/board.png'),
+          alt: 'Authentication Board',
+          title: 'Authentication Board',
+          guide: 'Google認証後ログイン 掲示板',
+          link: '/board'
         }
 
       ]
