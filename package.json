@@ -17,6 +17,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "@nuxtjs/axios": "^5.9.2",
     "@nuxtjs/bulma": "^1.2.1",
+    "firebase": "^7.6.1",
     "nuxt": "^2.0.0",
     "nuxt-fontawesome": "^0.4.0",
     "pug": "^2.0.4",
