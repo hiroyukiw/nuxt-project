@@ -7,7 +7,7 @@ section.section
 
 <script>
 import PostList from '~/components/posts/PostList.vue' //【２】PostListコンポーネントを読み込む
-import wp from '~/assets/javascript/wp.js'
+import wp from '~/plugins/wp.js'
 
 export default {
     asyncData ({ params }) {

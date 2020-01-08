@@ -2,6 +2,7 @@
   div.wrapper
     navbar
     nuxt
+    totop
     footers
 </template>
 
@@ -11,11 +12,13 @@ import '@/assets/stylesheet/_index.scss'
 import '@/assets/javascript/common.js'
 import Navbar from '~/components/Navbar.vue'
 import Footers from '~/components/Footers.vue'
+import Totop from '~/components/Totop.vue'
 
 export default {
   components: {
     Navbar,
-    Footers
+    Footers,
+    Totop
   }
 }
 </script>
