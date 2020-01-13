@@ -1,11 +1,10 @@
 import axios from 'axios' //axiosの読み込み
- 
+
 class WpApi {
   // コンストラクタ
   constructor (siteurl) {
     this.apiBase = `${siteurl}/wp-json`
   }
- 
   // 投稿一覧を取得するメソッド。
   posts () {
     return axios.get(`${this.apiBase}/wp/v2/posts`, {
@@ -20,7 +19,7 @@ class WpApi {
     })
   }
 }
- 
+
 const wp = new WpApi('https://www.acall.jp/info/')
- 
+
 export default wp

@@ -30,7 +30,6 @@ export default {
   */
   plugins: [
   ],
-  
   /*
   ** Nuxt.js dev-modules
   */
@@ -42,8 +41,11 @@ export default {
   modules: [
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     '@nuxtjs/bulma',
     'nuxt-fontawesome'
+  ],
+  plugins: [
   ],
   fontawesome: {
     imports: [

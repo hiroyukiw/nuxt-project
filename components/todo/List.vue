@@ -47,6 +47,13 @@ export default {
           title: 'Authentication Board',
           guide: 'Google認証後ログイン 掲示板',
           link: '/board'
+        },
+        {
+          image: require('~/assets/images/postcode.png'),
+          alt: 'Post Code',
+          title: 'Post Code',
+          guide: '郵便番号の検索',
+          link: '/postcode'
         }
 
       ]
