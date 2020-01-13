@@ -2,66 +2,53 @@
   section.section
     .container
       h1.title Post Code
-      .message 
-        p {{message}}
+      p 郵便番号を入力
       .field.has-addons
         p.control
-          input.input(type='text' placeholder='郵便番号を入力' v-model="zipcode" @focus="focus")
+          input.input(type='text' placeholder='郵便番号を入力' v-model="code")
         p.control
-          button.button.is-primary(@click="searchAddressInfo") 住所自動入力
-      .container
+          button.button.is-primary(@click="send()") 住所自動入力
+    br
+
+    .container
+      pre
         table.table
           tr
             th 都道府県 
-            td {{ addressData['address1']}}
+            td {{ address['pref']}}
           tr
             th 市区町村
-            td {{ addressData['address2']}}
+            td {{ address['city']}}
           tr
             th それ以降の住所
-            td {{ addressData['address3']}}
-      hr
-      p 
-        | エラーが出てしまったら、一旦Chromeを終了して、
-      p
-        pre $open /Applications/Google\ Chrome.app/ --args --disable-web-security --user-data-dir
-      p
-        | コマンドでChromeを開いてください。
-
+            td {{ address['town']}}
+    </p>
+  </div>
 </template>
 
 <script>
-const axios = require('axios');
-
-let url = 'http://zipcloud.ibsnet.co.jp/api/search?zipcode=';
-
-export default {
-  data() {
-    return {
-      zipcode: '',
-      addressData: {},
-      message: ''
-    }
-  },
-  methods: {
-    searchAddressInfo() {
-      axios.get(url + this.zipcode)
-      .then((res) => {
-        if(res.data.results == null) {
-          this.message = 'no data'
-          return;
-        }
-        this.addressData = res.data.results[0];
-      })
-      .catch((error) => {
-        this.message = 'error'
-      })
+  export default {
+    data () {
+      return {
+        address: '',
+        code: ''
+      };
     },
-    focus() {
-      this.zipcode = ''
-      this.addressData = {}
-      this.message = ''
+    methods: {
+      send() {
+        let url = 'https://api.zipaddress.net/?zipcode=' + this.code
+        
+        fetch(url)
+          .then( response => {
+            return response.json()
+          })
+          .then( json => {
+            this.address = json.data
+          })
+          .catch( (err) => {
+            this.address = '該当する住所が無いか、正しい形式で入力されていません。' + err
+          });
+      }
     }
   }
-}
 </script>
