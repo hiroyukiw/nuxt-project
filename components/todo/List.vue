@@ -54,8 +54,14 @@ export default {
           title: 'Post Code',
           guide: '郵便番号の検索',
           link: '/postcode'
+        },
+        {
+          image: require('~/assets/images/postcode.png'),
+          alt: '楽天API',
+          title: '楽天API',
+          guide: '楽天APIを使ってからの出力',
+          link: '/api01'
         }
-
       ]
     }
   }
